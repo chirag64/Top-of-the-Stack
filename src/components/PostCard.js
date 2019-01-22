@@ -6,11 +6,13 @@ export default class PostCard extends Component {
     super(props);
   }
   render() {
+    console.log(this.props.queryTags);
+    console.log(this.props.post.tags);
     return (
       <View style={styles.card}>
         <Text onPress={() => Linking.openURL(this.props.post.link)}>
           {this.props.post.title}
-        </Text >
+        </Text>
         <View style={styles.tagContainer}>
           {this.props.post.tags.map((tag, id) => {
             if (this.props.queryTags.includes(tag)) {
